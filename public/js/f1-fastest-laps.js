@@ -18,7 +18,7 @@ var y = d3.scale.linear()
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.csv("data/f1/fastest_laps.csv", function(error, data) {
+  d3.json("data/f1/fastest_laps.json", function(error, data) {
     color.domain(d3.keys(data[0]).filter(function(key) { return key !== "track"; }));
 
     var years = color.domain().map(function(name) {
